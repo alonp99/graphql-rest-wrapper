@@ -1,0 +1,36 @@
+{
+  "name": "graphql-rest-wrapper",
+  "version": "0.1.0",
+  "description": "Wraps RestAPI with GraphQL",
+  "main": "gqlr.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "test",
+    "transpile": "babel src --out-dir lib",
+    "build": "npm run transpile"
+  },
+  "keywords": [
+    "GraphQL",
+    "REST",
+    "WRAPPER"
+  ],
+  "author": "Alon Peretz <alonp99@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "invariant": "^2.2.1",
+    "js-beautify": "^1.6.3",
+    "express-graphql": "^0.5.4",
+    "graphql": "^0.7.0",
+    "node-fetch": "^1.6.1",
+    "require-from-string": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-flow-strip-types": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0"
+  }
+}
