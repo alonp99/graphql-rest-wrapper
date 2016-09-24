@@ -27,17 +27,17 @@ app.use('/graphql', wrapper.expressMiddleware())
 ## Installation
 
 Install the package
-```
+```javascript
 npm i graphql-rest-wrapper
 ```
 
 import
-```
+```javascript
 var gqlRestWrapper = require(graphql-rest-wrapper)
 ```
 
 Instantiate:
-```
+```javascript
 /**
  *  GraphQL rest wrapper takes all express-graphql options and some additional options.
  *
@@ -55,16 +55,16 @@ Instantiate:
  */
 
 new gqlRestWrapper([ENDPOINT], [OPTIONS])
-```
+```javascript
 attach middleware to a route
-```
+```javascript
 app.use([ROUTE], wrapper.expressMiddleware())
 ```
 
 Sending a query:
 Simplest way to send a query is using GraphiQL, by setting it to 'true' and just navgating to GraphQL route.
 Or making an HTTP GET/POST request:
-```
+```javascript
 fetch("http://localhost:9090/graphql",
     {
         headers: {
@@ -81,7 +81,7 @@ fetch("http://localhost:9090/graphql",
 ## Schema builder
 
 The GraphQL schema is being built with a modified version of [Aweary/json-to-graphql](https://github.com/Aweary/json-to-graphql "Aweary/json-to-graphql") package it will work for simple data structures like I use in the example code:
-```
+```javascript
 {
  name : "john_s",
  first_name : "John",
@@ -99,7 +99,7 @@ The GraphQL schema is being built with a modified version of [Aweary/json-to-gra
 ```
 But can fall short on more complex data structures, In those cases it needs some help.
 Just use [saveSchema: true] and tweak it the way you like. then import the file and pass it to the wrapper:
-```
+```javascript
 new gqlRestWrapper([ENDPOINT], {
     name: 'MyRestAPI',
     //generateSchema: true,
