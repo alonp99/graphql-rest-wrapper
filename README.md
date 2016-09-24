@@ -65,6 +65,22 @@ app.use([ROUTE], wrapper.expressMiddleware())
 
 Sending a query:
 Simplest way to send a query is using GraphiQL, by setting it to 'true' and just navgating to GraphQL route.
+```javascript
+{
+  MyRestAPI {
+    id
+    name
+    email
+    last_name
+    active
+    friends
+    password {
+      hash
+      value
+    }
+  }
+}
+```
 Or making an HTTP GET/POST request:
 ```javascript
 fetch("http://localhost:9090/graphql",
