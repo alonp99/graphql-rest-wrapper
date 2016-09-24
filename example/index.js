@@ -1,5 +1,5 @@
 import express from 'express';
-import gqlRestWrapper from '../lib/gqlr'
+import gqlRestWrapper from 'graphql-rest-wrapper'
 
 const app = express();
 
