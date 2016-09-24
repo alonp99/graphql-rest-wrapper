@@ -1,7 +1,8 @@
 ## Introduction
 
 graphql-rest-wrapper let you use GraphQL on top of your existing REST API very easily. using [express-graphql](https://github.com/graphql/express-graphql).
-See code example
+
+[See code example](https://github.com/alonp99/graphql-rest-wrapper/tree/master/example)
 
 ## Code Example
 The following code will fetch the REST API response, make a GraphQL schema for you, and expose the data from a GraphQL server.
