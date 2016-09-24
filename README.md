@@ -26,7 +26,7 @@ app.use('/graphql', wrapper.expressMiddleware())
 
 ## Installation
 
-Install the package
+Install the [npm package](https://www.npmjs.com/package/graphql-rest-wrapper)
 ```javascript
 npm i graphql-rest-wrapper
 ```
@@ -55,7 +55,8 @@ Instantiate:
  */
 
 new gqlRestWrapper([ENDPOINT], [OPTIONS])
-```javascript
+```
+
 attach middleware to a route
 ```javascript
 app.use([ROUTE], wrapper.expressMiddleware())
