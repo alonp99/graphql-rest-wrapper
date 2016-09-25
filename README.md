@@ -1,3 +1,5 @@
+# GraphQL - REST Wrapper
+________________________
 ## Introduction
 
 graphql-rest-wrapper let you use GraphQL on top of your existing REST API very easily. using [express-graphql](https://github.com/graphql/express-graphql).

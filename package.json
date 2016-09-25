@@ -1,6 +1,6 @@
 {
   "name": "graphql-rest-wrapper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Wraps RestAPI with GraphQL",
   "main": "gqlr.js",
   "directories": {
