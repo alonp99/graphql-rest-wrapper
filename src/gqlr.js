@@ -21,7 +21,7 @@ class _RestWrapper {
         this.endpoint = endpoint;
         this.options = Object.assign({}, opts)
 
-        this.options.schema = (opts.schema && !opts.generateSchema) ? _wrapSchema(opts.schema) : this._generateSchema();
+        this.options.schema = (opts.schema && !opts.generateSchema) ? this._wrapSchema(opts.schema) : this._generateSchema();
         this.options.name = opts.name || 'RestWrapper';
         this.options.saveSchema = opts.saveSchema || false;
         this.options.outputPath = opts.outputPath || './';

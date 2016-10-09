@@ -18,11 +18,10 @@ const app = express();
  *
  */
 
-const wrapper = new gqlRestWrapper('https://www.bhphotovideo.com/bnh/controller/home/?A=getCartItems&groupItems=&O=&Q=json&_=1476002271204', {
+const wrapper = new gqlRestWrapper('http://localhost:9090/restapi', {
     name: 'MyRestAPI',
-    // generateSchema: true,
-    // saveSchema: true,
-    schema: require('./MyRestAPI'),
+    generateSchema: true,
+    saveSchema: true,
     graphiql: true
 })
 
