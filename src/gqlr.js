@@ -21,7 +21,7 @@ class _RestWrapper {
         this.endpoint = endpoint;
         this.options = Object.assign({}, opts)
 
-        this.options.schema = (opts.schema && !opts.generateSchema) ? opts.schema : this._generateSchema();
+        this.options.schema = (opts.schema && !opts.generateSchema) ? _wrapSchema(opts.schema) : this._generateSchema();
         this.options.name = opts.name || 'RestWrapper';
         this.options.saveSchema = opts.saveSchema || false;
         this.options.outputPath = opts.outputPath || './';
@@ -30,6 +30,10 @@ class _RestWrapper {
 
     _generateSchema() {
         return schemaGenerator(this.endpoint, {saveToFile: this.options.saveSchema, name: this.options.name});
+    }
+
+    _wrapSchema(schema) {
+        return schemaGenerator(this.endpoint, {saveToFile: this.options.saveSchema, name: this.options.name, wrapMode: true, providedSchema: schema});
     }
 
     expressMiddleware() {

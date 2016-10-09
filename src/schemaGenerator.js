@@ -35,10 +35,10 @@ async function createSchema(endpoint, opts = {}) {
         .then(json => json);
 
     const json = await request;
-    const schemaString = generateSchema(json);
-    if (saveToFile) {
+    const schemaSource = opts.wrapMode ? opts.providedSchema : generateSchema(json);
+    if (saveToFile && !opts.wrapMode) {
         const filename = name + '.js';
-        fs.writeFile(filename, schemaString, (msg) => console.log(`Done writing ${filename} ...`))
+        fs.writeFile(filename, schemaSource, (msg) => console.log(`Done writing ${filename} ...`))
     }
     const schema = new GraphQLSchema({
         query: new GraphQLObjectType({
@@ -46,7 +46,7 @@ async function createSchema(endpoint, opts = {}) {
             fields: ()=> {
                 let obj = {};
                 obj[name] = {
-                    type: requireFromString(schemaString),
+                    type: opts.wrapMode ? schemaSource : requireFromString(schemaSource),
                     resolve (root, params, options) {
                         return request;
                     }
@@ -55,6 +55,7 @@ async function createSchema(endpoint, opts = {}) {
             }
         })
     })
+
     return schema;
 }
 
